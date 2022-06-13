@@ -1,8 +1,3 @@
-// the routes in my code strucutre are intended to interacte with the various controlers for the execution of specific queries as stored in the modules.
-// these routes can be found in the bottom of this file. these routes are declared and required for use in this application to alter data using the various
-// method request within. Throught the API's, these request interacte with specifc tables, and table collumns in our data base to GET, POST, PUT, and DELETE
-// the information within
-
 
 
 const rateLimit = require('express-rate-limit')
@@ -184,6 +179,15 @@ server.use((req, res, next) => {
 
 // // Serve static frontend resources
 // server.use(express.static("frontend"))
+
+
+
+
+// the routes in my code structure are intended to interact with the various controllers for the execution of specific queries as stored in the modules.
+// these routes can be found at the bottom of this file. these routes are declared and required for use in this application to alter data using the various
+// method request within. Through the API's, these requests interact with specific tables, and table columns in our database to GET, POST, PUT, and DELETE
+// the information within
+
 
 
 /// Link up the user controller
