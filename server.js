@@ -55,7 +55,7 @@ server.use(session({
     saveUninitialized: false,
     cookie: {
         path: '/',
-        secure: true
+        secure: false
     } // Should be turned to true in production (HTTPS only)
 }))
 

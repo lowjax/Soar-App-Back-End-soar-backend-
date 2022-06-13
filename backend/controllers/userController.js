@@ -79,9 +79,7 @@ console.log(user)
     userModel.createUser(
         validator.escape(user.email),
         validator.escape(user.first_name),
-            // user.last_name, user.phone,
-            // user.profilePic_path,
-            // user.date_joined,
+        validator.escape(user.last_name),
         validator.escape(user.user_status),
             hashedPassword
 
@@ -287,7 +285,7 @@ if (userLoggedIn == true) {
 
 
 router.post("/users/login", (req, res) => {
-    // console.log(req)
+    // console.log(req.boy)
     let login = req.body
        console.log(login)
 

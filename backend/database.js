@@ -2,7 +2,7 @@
 // Import mysql2 module so that we can talk to the database
 const mysql = require("mysql2")
 
-// Create a connection to the database
+// // Create a connection to the database
 // const connection = mysql.createPool({
 //     host: "localhost",
 //     user: "root",
