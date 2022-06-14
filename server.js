@@ -58,7 +58,7 @@ server.use(session({
 
 // exress rate limiiting *********************
 const limiter = rateLimit({
-    windowMs: 24 * 60 * 60 * 1000, // 12 hour duration in milliseconds
+    windowMs: 24 * 60 * 60 * 500, // 12 hour duration in milliseconds
     max: 1000, // Limit each IP to 1000 requests per `window` (here, per 24 hours)
     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
@@ -66,7 +66,7 @@ const limiter = rateLimit({
 
 // Apply the rate limiting middleware to all requests
 const speedLimiter = slowDown({
-    windowMs: 1000,
+    windowMs: 500,
     delayAfter: 1,
     delayMs: 500,
 });
@@ -175,7 +175,7 @@ server.use((req, res, next) => {
     server.use((err, req, res, next) => {
         console.log('Error handler', err);
         res.status(err.status || 500);
-        res.send("Something broke");
+        res.send(err);
     });
 
 // // Serve static frontend resources
