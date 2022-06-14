@@ -77,7 +77,7 @@ server.use(speedLimiter, limiter);
 
 const corsOptions = {
     // origin: 'http://localhost:3000',
-    origin: 'https://www.soarphysio.com',
+    origin: ['https://www.soarphysio.com', 'https://soar-backend.herokuapp.com', '*'],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 200 // some legacy browser (IE11, various smartTvs) choke on 204
