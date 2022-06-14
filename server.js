@@ -11,6 +11,17 @@ const bcryptjs = require ('bcryptjs');
 const server = express()
 
 
+const corsOptions = {
+    // origin: 'http://localhost:3000',
+    origin: ['https://www.soarphysio.com', 'https://soar-backend.herokuapp.com', 'https://www.soarphysio.com/', '*'],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    optionsSuccessStatus: 200 // some legacy browser (IE11, various smartTvs) choke on 204
+    
+    
+}
+
+server.use(cors(corsOptions))
 
 
 // use the express-static middleware
@@ -75,17 +86,17 @@ const speedLimiter = slowDown({
 server.use(speedLimiter, limiter);
 // server.user(limiter)
 
-const corsOptions = {
-    // origin: 'http://localhost:3000',
-    origin: ['https://www.soarphysio.com', 'https://soar-backend.herokuapp.com', 'https://www.soarphysio.com/', '*'],
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    optionsSuccessStatus: 200 // some legacy browser (IE11, various smartTvs) choke on 204
+// const corsOptions = {
+//     // origin: 'http://localhost:3000',
+//     origin: ['https://www.soarphysio.com', 'https://soar-backend.herokuapp.com', 'https://www.soarphysio.com/', '*'],
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true,
+//     optionsSuccessStatus: 200 // some legacy browser (IE11, various smartTvs) choke on 204
     
     
-}
+// }
 
-server.use(cors(corsOptions))
+// server.use(cors(corsOptions))
 
 // server.listen(80, function () {
 //     console.log('CORS-enabled web server listening on port 80')
