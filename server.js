@@ -124,6 +124,7 @@ server.use((req, res, next) => {
     let allowedURLs = [
         "/index.html",
          "https://soar-backend.herokuapp.com/",
+         "https://www.soarphysio.com/",
         "/api/users/login",
         "/api/users/create",
         //  "/api/users/logout",
@@ -148,27 +149,27 @@ server.use((req, res, next) => {
     ]
 
     // if the user is logged in 
-    // if (userLoggedIn) {
-    //     console.log(userLoggedIn)
-    //     // let them through
-    //     if (adminOnlyURLS.includes(req.originalUrl) && req.session.user.accessRights !== "admin") {
-    //         console.log('heello 1')
-    //         res.redirect("/login");
-    //     } else {
-    //         next()
-    //     }
-    // } else {
-    //     if (allowedURLs.includes(req.originalUrl)) {
-    //         //allows the guest user through
-    //         next()
-    //     } else {
+    if (userLoggedIn) {
+        console.log(userLoggedIn)
+        // let them through
+        if (adminOnlyURLS.includes(req.originalUrl) && req.session.user.accessRights !== "admin") {
+            console.log('heello 1')
+            res.redirect("/login");
+        } else {
+            next()
+        }
+    } else {
+        if (allowedURLs.includes(req.originalUrl)) {
+            //allows the guest user through
+            next()
+        } else {
 
-    //         res.redirect("/index.html")
-    //         //if not allowed - reditect to the login page
-    //         console.log('heello')
+            res.redirect("/index.html")
+            //if not allowed - reditect to the login page
+            console.log('heello')
 
-    //     }
-    // }
+        }
+    }
     
 
 })
