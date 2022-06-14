@@ -95,21 +95,21 @@ server.use(cors(corsOptions))
 
 
 // Custom Middleware ip whitelisting
-server.use((req, res, next) => {
-    let validIps = ['::12','::1', '127.0.0.1']; // Put your IP whitelist in this array
+// server.use((req, res, next) => {
+//     let validIps = ['::12','::1', '127.0.0.1']; // Put your IP whitelist in this array
     
-      if(validIps.includes(req.ip)){
-          // IP is ok, so go on
-          console.log("IP ok");
-          next();
-      }
-      else{
-          // Invalid ip
-          console.log("Bad IP: " + req.ip);
-          const err = new Error("Bad IP: " + req.ip);
-          next(err);
-      }
-    })
+//       if(validIps.includes(req.ip)){
+//           // IP is ok, so go on
+//           console.log("IP ok");
+//           next();
+//       }
+//       else{
+//           // Invalid ip
+//           console.log("Bad IP: " + req.ip);
+//           const err = new Error("Bad IP: " + req.ip);
+//           next(err);
+//       }
+//     })
 
 
 
