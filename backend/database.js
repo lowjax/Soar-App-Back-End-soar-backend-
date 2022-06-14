@@ -3,19 +3,19 @@
 const mysql = require("mysql2")
 
 // Create a connection to the database
-const connection = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "soar"
-})
-
 // const connection = mysql.createPool({
-//     host: "us-cdbr-east-05.cleardb.net",
-//     user: "b65a5210e3b5ab",
-//     password: "0881628e",
-//     database: "heroku_c58f5188f29ac0c"
+//     host: "localhost",
+//     user: "root",
+//     password: "root",
+//     database: "soar"
 // })
+
+const connection = mysql.createPool({
+    host: "us-cdbr-east-05.cleardb.net",
+    user: "b65a5210e3b5ab",
+    password: "0881628e",
+    database: "heroku_c58f5188f29ac0c"
+})
 
 
 
