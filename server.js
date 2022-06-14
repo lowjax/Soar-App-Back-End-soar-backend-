@@ -172,11 +172,11 @@ server.use((req, res, next) => {
 
 })
     // Error handler
-    server.use((err, req, res, next) => {
-        console.log('Error handler', err);
-        res.status(err.status || 500);
-        res.send(err);
-    });
+    // server.use((err, req, res, next) => {
+    //     console.log('Error handler', err);
+    //     res.status(err.status || 500);
+    //     res.send(err);
+    // });
 
 // // Serve static frontend resources
 // server.use(express.static("frontend"))
