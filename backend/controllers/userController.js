@@ -95,28 +95,28 @@ console.log(user)
             res.status(500).json("query error - failed to create user")
         })
 
-        let userLoggedIn
-        if (req.session.user != null) {
-            userLoggedIn = true
+        // let userLoggedIn
+        // if (req.session.user != null) {
+        //     userLoggedIn = true
     
-        } else {
-            userLoggedIn = false
-        }
+        // } else {
+        //     userLoggedIn = false
+        // }
     
-        if (userLoggedIn == true) {
-            logModel.createLog(
-                req.ip,
-                (JSON.stringify(req.session.user)),
-                req.session.user.email,
-                req.session.user.user_status,
-                (new Date().toISOString()),
-                req.method,
+        // if (userLoggedIn == true) {
+        //     logModel.createLog(
+        //         req.ip,
+        //         (JSON.stringify(req.session.user)),
+        //         req.session.user.email,
+        //         req.session.user.user_status,
+        //         (new Date().toISOString()),
+        //         req.method,
     
-            )
-        } else {
-            console.log("not logged in")
-            // res.redirect('/api/user/login')
-        }
+        //     )
+        // } else {
+        //     console.log("not logged in")
+        //     // res.redirect('/api/user/login')
+        // }
 
 })
 
@@ -207,28 +207,28 @@ router.put("/users/update", (req, res) => {
             console.log(error)
             res.status(500).json("failed to update user - query error")
         })
-    let userLoggedIn
-    if (req.session.user != null) {
-        userLoggedIn = true
+    // let userLoggedIn
+    // if (req.session.user != null) {
+    //     userLoggedIn = true
 
-    } else {
-        userLoggedIn = false
-    }
+    // } else {
+    //     userLoggedIn = false
+    // }
 
-    if (userLoggedIn == true) {
-        logModel.createLog(
-            req.ip,
-            (JSON.stringify(req.session.user)),
-            req.session.user.email,
-            req.session.user.user_status,
-            (new Date().toISOString()),
-            req.method,
+    // if (userLoggedIn == true) {
+    //     logModel.createLog(
+    //         req.ip,
+    //         (JSON.stringify(req.session.user)),
+    //         req.session.user.email,
+    //         req.session.user.user_status,
+    //         (new Date().toISOString()),
+    //         req.method,
 
-        )
-    } else {
-        console.log("not logged in")
-        // res.redirect('/api/user/login')
-    }
+    //     )
+    // } else {
+    //     console.log("not logged in")
+    //     // res.redirect('/api/user/login')
+    // }
 })
 |
 router.delete("/users/delete", (req, res) => {
@@ -257,30 +257,30 @@ userModel.deleteUser(email)
         console.log(error)
         res.status(500).json("failed to delete user - query error")
     })
-let userLoggedIn
-// if (req.session.user = "admin")
-if (req.session.user != null) 
-{
-    userLoggedIn = true
+// let userLoggedIn
+// // if (req.session.user = "admin")
+// if (req.session.user != null) 
+// {
+//     userLoggedIn = true
 
-} else {
-    userLoggedIn = false
-}
+// } else {
+//     userLoggedIn = false
+// }
 
-if (userLoggedIn == true) {
-    logModel.createLog(
-        req.ip,
-        (JSON.stringify(req.session.user)),
-        req.session.user.email,
-        req.session.user.user_status,
-        (new Date().toISOString()),
-        req.method,
+// if (userLoggedIn == true) {
+//     logModel.createLog(
+//         req.ip,
+//         (JSON.stringify(req.session.user)),
+//         req.session.user.email,
+//         req.session.user.user_status,
+//         (new Date().toISOString()),
+//         req.method,
 
-    )
-} else {
-    console.log("not logged in")
-    // res.redirect('/api/user/login')
-}
+//     )
+// } else {
+//     console.log("not logged in")
+//     // res.redirect('/api/user/login')
+// }
 })
 
 
@@ -376,30 +376,30 @@ router.post("/users/logout", (req, res) => {
     console.log('Logout Stuff1: ', userLoggedIn)
     console.log('Logout stuff2: ', req.session)
     // console.log(req.session)
-    if (req.session.user.user_status !== "","admin") {
-        userLoggedIn = true
+    // if (req.session.user.user_status !== "","admin") {
+    //     userLoggedIn = true
 
-    } else {
-        userLoggedIn = false
-    }
-    console.log("before check: ",userLoggedIn)
-    if (userLoggedIn == true) {
-        // logModel.createLog(
-        //     req.ip,
-        //     (JSON.stringify(req.session)),
-        //     req.session.username,
-        //     req.session.user.user_status,
-        //     (new Date().toISOString()),
-        //     req.method,
+    // } else {
+    //     userLoggedIn = false
+    // }
+    // console.log("before check: ",userLoggedIn)
+    // if (userLoggedIn == true) {
+    //     // logModel.createLog(
+    //     //     req.ip,
+    //     //     (JSON.stringify(req.session)),
+    //     //     req.session.username,
+    //     //     req.session.user.user_status,
+    //     //     (new Date().toISOString()),
+    //     //     req.method,
 
-        // )
-        console.log("just before destroy :)")
-        req.session.destroy()
-        res.status(200).json("logged out")
-    } else {
-        console.log("not logged in")
-        // res.redirect('/api/user/login')
-    }
+    //     // )
+    //     console.log("just before destroy :)")
+    //     req.session.destroy()
+    //     res.status(200).json("logged out")
+    // } else {
+    //     console.log("not logged in")
+    //     // res.redirect('/api/user/login')
+    // }
 })
 
 
