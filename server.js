@@ -79,7 +79,7 @@ const corsOptions = {
     // origin: 'http://localhost:3000',
     origin: 'https://www.soarphysio.com',
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: false,
+    credentials: true,
     optionsSuccessStatus: 200 // some legacy browser (IE11, various smartTvs) choke on 204
     
     
