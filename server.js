@@ -149,6 +149,7 @@ server.use((req, res, next) => {
 
     // if the user is logged in 
     if (userLoggedIn) {
+        console.log(userLoggedIn)
         // let them through
         if (adminOnlyURLS.includes(req.originalUrl) && req.session.user.accessRights !== "admin") {
             console.log('heello 1')
