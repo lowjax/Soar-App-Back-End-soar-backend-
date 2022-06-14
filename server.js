@@ -5,6 +5,7 @@ const express = require("express")
 const session = require("express-session")
 const cookieParser = require("cookie-parser")
 const bcryptjs = require ('bcryptjs');
+const cors = require('cors')
 
 
 
@@ -39,7 +40,6 @@ const port = process.env.PORT
 //importing express session to declare the variables
 // const rateLimit = require('express-rate-limit')
 const slowDown = require("express-slow-down");
-const cors = require('cors')
 const logModel = require("./backend/models/logModel")
 
 // Enable middleware for JSON and urlencoded form data
