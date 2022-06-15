@@ -173,7 +173,7 @@ server.use((req, res, next) => {
         // let them through
         if (adminOnlyURLS.includes(req.originalUrl) && req.session.user.accessRights !== "admin") {
             console.log('heello 1')
-            res.redirect("/login");
+            res.redirect("/Login");
         } else {
             next()
         }
