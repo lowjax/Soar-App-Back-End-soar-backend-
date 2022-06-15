@@ -138,7 +138,8 @@ server.use((req, res, next) => {
          "https://www.soarphysio.com/",
         "/api/users/login",
         "/api/users/create",
-        '/api/content',
+        "/index.js",
+        "/api/content",
         //  "/api/users/logout",
         //  "/logout.html",
 
@@ -147,6 +148,7 @@ server.use((req, res, next) => {
 
 
     let adminOnlyURLS = [
+        
         "/IndexAdmin",
         "/SelectionAdmin",
         "/AdminUserCRUD",
