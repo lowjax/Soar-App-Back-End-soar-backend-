@@ -24,28 +24,28 @@ router.get("/body", (req, res) => {
             res.status(500).json("query error")
         })
 
-    let userLoggedIn
-    if (req.session.user != null) {
-        userLoggedIn = true
+    // let userLoggedIn
+    // if (req.session.user != null) {
+    //     userLoggedIn = true
 
-    } else {
-        userLoggedIn = false
-    }
+    // } else {
+    //     userLoggedIn = false
+    // }
 
-    if (userLoggedIn == true) {
-        logModel.createLog(
-            req.ip,
-            (JSON.stringify(req.session.user)),
-            req.session.user.email,
-            req.session.user.user_status,
-            (new Date().toISOString()),
-            req.method,
+    // if (userLoggedIn == true) {
+    //     logModel.createLog(
+    //         req.ip,
+    //         (JSON.stringify(req.session.user)),
+    //         req.session.user.email,
+    //         req.session.user.user_status,
+    //         (new Date().toISOString()),
+    //         req.method,
 
-        )
-    } else {
-        console.log("not logged in")
-        // res.redirect('/api/user/login')
-    }
+    //     )
+    // } else {
+    //     console.log("not logged in")
+    //     // res.redirect('/api/user/login')
+    // }
 })
 
 
@@ -65,28 +65,28 @@ router.post("/body", (req, res) => {
             console.log(error)
             res.status(500).json("query error")
         })
-    let userLoggedIn
-    if (req.session.user != null) {
-        userLoggedIn = true
+    // let userLoggedIn
+    // if (req.session.user != null) {
+    //     userLoggedIn = true
 
-    } else {
-        userLoggedIn = false
-    }
+    // } else {
+    //     userLoggedIn = false
+    // }
 
-    if (userLoggedIn == true) {
-        logModel.createLog(
-            req.ip,
-            (JSON.stringify(req.session.user)),
-            req.session.user.email,
-            req.session.user.user_status,
-            (new Date().toISOString()),
-            req.method,
+    // if (userLoggedIn == true) {
+    //     logModel.createLog(
+    //         req.ip,
+    //         (JSON.stringify(req.session.user)),
+    //         req.session.user.email,
+    //         req.session.user.user_status,
+    //         (new Date().toISOString()),
+    //         req.method,
 
-        )
-    } else {
-        console.log("not logged in")
-        // res.redirect('/api/user/login')
-    }
+    //     )
+    // } else {
+    //     console.log("not logged in")
+    //     // res.redirect('/api/user/login')
+    // }
 
 
 })
@@ -162,28 +162,28 @@ router.delete("/body/delete", (req, res) => {
             res.status(500).json("failed to delete favorites - query error")
         })
 
-    let userLoggedIn
-    if (req.session.user != null) {
-        userLoggedIn = true
+    // let userLoggedIn
+    // if (req.session.user != null) {
+    //     userLoggedIn = true
 
-    } else {
-        userLoggedIn = false
-    }
+    // } else {
+    //     userLoggedIn = false
+    // }
 
-    if (userLoggedIn == true) {
-        logModel.createLog(
-            req.ip,
-            (JSON.stringify(req.session.user)),
-            req.session.user.email,
-            req.session.user.user_status,
-            (new Date().toISOString()),
-            req.method,
+    // if (userLoggedIn == true) {
+    //     logModel.createLog(
+    //         req.ip,
+    //         (JSON.stringify(req.session.user)),
+    //         req.session.user.email,
+    //         req.session.user.user_status,
+    //         (new Date().toISOString()),
+    //         req.method,
 
-        )
-    } else {
-        console.log("not logged in")
-        // res.redirect('/api/user/login')
-    }
+    //     )
+    // } else {
+    //     console.log("not logged in")
+    //     // res.redirect('/api/user/login')
+    // }
 })
 
 
