@@ -133,7 +133,7 @@ server.use((req, res, next) => {
     console.log(1, userLoggedIn)
     //define a list of allowed urls for non-logged in users
     let allowedURLs = [
-        "/index.html",
+        "/index",
         //  "https://soar-backend.herokuapp.com/",
          "https://www.soarphysio.com/",
         "/api/users/login",
@@ -183,7 +183,7 @@ server.use((req, res, next) => {
             next()
         } else {
 
-            res.redirect("/index.html")
+            res.redirect("/index")
             //if not allowed - reditect to the login page
             console.log('heello')
 
