@@ -157,7 +157,14 @@ server.use((req, res, next) => {
         "/LogoutAdmin",
         "/CreateAccountAdmin",
         "/ThemeAdmin",
-        "/CreateSport"
+        "/CreateSport",
+        "https://www.soarphysio.com/AdminUserCRUD",
+        "https://www.soarphysio.com/SportCRUD",
+        "https://www.soarphysio.com/SportCRUD",
+        "https://www.soarphysio.com/IndexAdmin",
+        "https://www.soarphysio.com/ContentcontainerAdmin",
+        "https://www.soarphysio.com/ThemeAdmin",
+        "https://www.soarphysio.com/LogoutAdmin"
     ]
 
     // if the user is logged in 
