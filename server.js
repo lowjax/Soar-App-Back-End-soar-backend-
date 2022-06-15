@@ -129,7 +129,7 @@ server.use((req, res, next) => {
 
     // the user is logged in if the have session data
     console.log(req.session)
-    // let userLoggedIn = req.session.user != null
+    let userLoggedIn = req.session.user != null
     console.log(1, userLoggedIn)
     //define a list of allowed urls for non-logged in users
     let allowedURLs = [
