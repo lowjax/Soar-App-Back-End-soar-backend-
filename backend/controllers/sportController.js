@@ -203,7 +203,7 @@ router.post("/sport/create", (req, res) => {
         validator.escape(sport.sport)
             // We now store the hashed version of the password
         )
-        .then((result) => {
+        .then((res) => {
             res.status(200).json("sport created ")
             // res.status(200).json("sport created " + result.injury)
 
