@@ -70,7 +70,7 @@ server.use(session({
 // exress rate limiiting *********************
 const limiter = rateLimit({
     windowMs: 24 * 60 * 60 * 500, // 12 hour duration in milliseconds
-    max: 1000, // Limit each IP to 1000 requests per `window` (here, per 24 hours)
+    max: 1000, // Limit each IP to 500 requests per `window` (here, per 24 hours)
     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
@@ -138,6 +138,7 @@ server.use((req, res, next) => {
          "https://www.soarphysio.com/",
         "/api/users/login",
         "/api/users/create",
+        '/api/content',
         //  "/api/users/logout",
         //  "/logout.html",
 
