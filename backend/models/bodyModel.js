@@ -1,20 +1,20 @@
 // Access the database connection from database.js
-const db = require("../database")
-module.exports.getBodyPart = () => {
-    return db.query("SELECT * FROM body")
+import { query } from "../database"
+export function getBodyPart() {
+    return query("SELECT * FROM body")
 }
 
-module.exports.createBodyPart = (body) => {
-    return db.query("INSERT INTO body (body) "
+export function createBodyPart(body) {
+    return query("INSERT INTO body (body) "
         + `VALUES (?)`, [body])
 }
 
-module.exports.deleteBodyPart = (body) => {
-    return db.query("DELETE FROM body WHERE body = ?", [body])
+export function deleteBodyPart(body) {
+    return query("DELETE FROM body WHERE body = ?", [body])
 }
 
-module.exports.updateBodyPart = (body) => {
-    return db.query("UPDATE boyd WHERE body = ?", [body])
+export function updateBodyPart(body) {
+    return query("UPDATE boyd WHERE body = ?", [body])
 }
 
 
