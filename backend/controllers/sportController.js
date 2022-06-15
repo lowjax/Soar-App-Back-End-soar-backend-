@@ -189,7 +189,7 @@ router.post("/sport/create", (req, res) => {
     // req.body represents the form field data (json in body of fetch)
     let sport = req.body
 
-        console.log(sport)
+        console.log(requestOptions)
 
 
     // Only allow valid emails
